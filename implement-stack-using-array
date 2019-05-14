@@ -1,0 +1,57 @@
+                                                    stack class
+===========================================================================================================================================
+
+package stackusingarray;
+
+public class Stack {
+
+	int[] stack = new int[5];
+	int top = 0;
+
+	public void push(int item) {
+		if (stack.length == 0) {
+			System.out.println("No space availabe");
+		} else if (stack.length > 0) {
+			stack[top] = item;
+			top++;
+		} else {
+			System.out.print("number cant be added to the stack");
+		}
+
+	}
+
+	public void show() {
+		for (int i : stack) {
+			System.out.print(i+" ");
+		}
+		
+	}
+	public void pop() {
+		if(stack.length>0){
+			System.out.println(stack[top]);
+			top--;
+			stack[top]=0;
+			top--;
+		}
+
+	}
+}
+==========================================================================================================================================
+                                                          Runner class
+ =========================================================================================================================================
+ 
+ package stackusingarray;
+
+import java.util.Scanner;
+
+public class Runner {
+public static void main(String[] args) {
+	Stack st= new Stack();
+
+	
+	st.push(45);
+	st.show();
+	st.pop();
+	st.show();
+}
+}
